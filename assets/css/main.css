@@ -4661,6 +4661,14 @@ section,
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
 }
 
+.project-detail .project-visual-dynapm {
+  background: linear-gradient(145deg, #1a2332 0%, #2a3f55 55%, #ff4d4f33 100%);
+}
+
+.project-detail .project-visual-timetrack {
+  background: linear-gradient(145deg, #141b2d 0%, #243456 55%, #5b8def33 100%);
+}
+
 .project-detail .project-hero-inner {
   position: absolute;
   inset: 0;
@@ -4728,6 +4736,56 @@ section,
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin-top: 18px;
+}
+
+.project-detail .project-principle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.project-detail .principle-card {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 12px;
+  padding: 18px 16px;
+}
+
+.project-detail .principle-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.project-detail .principle-card p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.project-detail .project-signal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.project-detail .project-signal-tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: color-mix(in srgb, var(--default-color), transparent 94%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 15px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--heading-color);
+}
+
+.project-detail .project-section-note {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--default-color), transparent 18%);
 }
 
 .project-detail .outcome-card {
@@ -4857,7 +4915,8 @@ section,
 }
 
 @media (max-width: 768px) {
-  .project-detail .project-outcomes {
+  .project-detail .project-outcomes,
+  .project-detail .project-principle-grid {
     grid-template-columns: 1fr;
   }
 
