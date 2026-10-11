@@ -4259,6 +4259,32 @@ section,
   }
 }
 
+@media (max-width: 575px) {
+  .header .logo h1.sitename {
+    font-size: 14px;
+    max-width: 42vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header .btn-getstarted {
+    display: none;
+  }
+}
+
+a:focus-visible,
+.btn-getstarted:focus-visible,
+.mobile-nav-toggle:focus-visible,
+.scroll-top:focus-visible,
+.portfolio-link:focus-visible,
+.project-cta:focus-visible,
+.btn-repo:focus-visible,
+.back-to-projects:focus-visible,
+.publication-link:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
 .hero .hero-tagline {
   margin-top: 18px;
   font-size: 18px;
@@ -4967,5 +4993,36 @@ section,
 
   .project-detail .project-hero-labels strong {
     font-size: 1.6rem;
+  }
+
+  .page-title h1 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    word-break: break-word;
+  }
+
+  .page-title .project-page-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.4;
+  }
+
+  .project-detail .project-sidebar .info-row .value {
+    overflow-wrap: anywhere;
+  }
+
+  .portfolio .portfolio-summary .project-cta-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .project-detail .project-hero-labels strong {
+    font-size: 1.35rem;
+  }
+
+  .project-detail .project-hero-labels span {
+    font-size: 0.72rem;
   }
 }
