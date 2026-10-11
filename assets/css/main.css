@@ -4677,6 +4677,10 @@ section,
   background: linear-gradient(145deg, #16251c 0%, #1f3d2e 55%, #3dd68c33 100%);
 }
 
+.project-detail .project-visual-school {
+  background: linear-gradient(145deg, #1f1a14 0%, #3a2f22 55%, #d4a37333 100%);
+}
+
 .project-detail .project-hero-inner {
   position: absolute;
   inset: 0;
@@ -4802,6 +4806,18 @@ section,
   border-left: 3px solid var(--accent-color);
   border-radius: 12px;
   padding: 20px 18px;
+}
+
+.project-detail .project-workflow-list {
+  margin: 0;
+  padding-left: 1.35rem;
+  counter-reset: none;
+}
+
+.project-detail .project-workflow-list li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  padding-left: 4px;
 }
 
 .project-detail .project-context-panel h3 {
