@@ -4609,3 +4609,21 @@ section,
 .portfolio .project-visual-osr {
   background: linear-gradient(145deg, #1a1828 0%, #2f2a4a 55%, #8b7cf633 100%);
 }
+
+.portfolio .portfolio-card .portfolio-image-container .portfolio-overlay .portfolio-actions .portfolio-link-disabled {
+  cursor: default;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.portfolio .portfolio-card .portfolio-image-container .portfolio-overlay .portfolio-actions .portfolio-link-disabled:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--accent-color);
+  transform: none;
+}
+
+.portfolio .portfolio-summary .project-cta-pending {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  cursor: default;
+  pointer-events: none;
+}
