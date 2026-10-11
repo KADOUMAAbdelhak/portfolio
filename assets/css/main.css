@@ -4627,3 +4627,241 @@ section,
   cursor: default;
   pointer-events: none;
 }
+
+.portfolio .portfolio-summary .project-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  align-items: center;
+}
+
+.portfolio .portfolio-summary .project-cta-secondary {
+  color: color-mix(in srgb, var(--default-color), transparent 5%);
+}
+
+.portfolio .portfolio-summary .project-cta-secondary:hover {
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Project detail pages
+--------------------------------------------------------------*/
+.page-title .project-page-subtitle {
+  margin: 8px 0 0;
+  font-size: 1.05rem;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+}
+
+.project-detail .project-hero-visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  aspect-ratio: 16/9;
+  margin-bottom: 32px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.project-detail .project-hero-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 28px;
+  text-align: center;
+}
+
+.project-detail .project-hero-inner > i {
+  font-size: 3.5rem;
+  color: color-mix(in srgb, var(--contrast-color), transparent 10%);
+}
+
+.project-detail .project-hero-labels span {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.project-detail .project-hero-labels strong {
+  display: block;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.project-detail .project-detail-content h2 {
+  font-size: 1.55rem;
+  margin-bottom: 14px;
+}
+
+.project-detail .project-overview,
+.project-detail .project-section-block {
+  margin-bottom: 34px;
+}
+
+.project-detail .project-detail-content p {
+  line-height: 1.7;
+  margin-bottom: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 8%);
+}
+
+.project-detail .project-list {
+  padding-left: 1.15rem;
+  margin: 0;
+}
+
+.project-detail .project-list li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.project-detail .project-outcomes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.project-detail .outcome-card {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 12px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.project-detail .outcome-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 1.1;
+}
+
+.project-detail .outcome-unit {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.project-detail .outcome-label {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--heading-color);
+}
+
+.project-detail .project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-detail .project-tech-tags span {
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  color: var(--accent-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-radius: 15px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.project-detail .project-back-row {
+  margin-top: 10px;
+}
+
+.project-detail .back-to-projects {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.project-detail .project-sidebar .project-info-card {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 18px;
+}
+
+.project-detail .project-sidebar .project-info-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+}
+
+.project-detail .project-sidebar .info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.project-detail .project-sidebar .info-row:last-of-type {
+  margin-bottom: 18px;
+}
+
+.project-detail .project-sidebar .info-row .label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.project-detail .project-sidebar .info-row .value {
+  font-size: 0.98rem;
+  color: var(--heading-color);
+  font-weight: 500;
+}
+
+.project-detail .project-sidebar .btn-repo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 18px;
+  border-radius: 10px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-weight: 600;
+}
+
+.project-detail .project-sidebar .btn-repo:hover {
+  background: color-mix(in srgb, var(--accent-color), #000 12%);
+  color: var(--contrast-color);
+}
+
+.project-detail .project-repo-note p {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: color-mix(in srgb, var(--default-color), transparent 12%);
+}
+
+.project-detail .project-repo-note a {
+  word-break: break-all;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .project-detail .project-outcomes {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail .project-hero-labels strong {
+    font-size: 1.6rem;
+  }
+}

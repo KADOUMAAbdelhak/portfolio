@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>DynAPM | Abdelhak Kadouma</title>
+  <meta name="description" content="DynAPM is a machine-learning project for predictive application profile maintenance using workload forecasting and online drift detection.">
+  <meta name="keywords" content="DynAPM, Machine Learning, Time-Series Forecasting, Drift Detection, Application Profiling">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Craftivo
+  * Template URL: https://bootstrapmade.com/craftivo-bootstrap-portfolio-template/
+  * Updated: Oct 04 2025 with Bootstrap v5.3.8
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="project-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">Abdelhak Kadouma</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#portfolio" class="active">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#contact">Let's Connect</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title light-background">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#portfolio">Projects</a></li>
+            <li class="current">DynAPM</li>
+          </ol>
+        </nav>
+        <h1>DynAPM</h1>
+        <p class="project-page-subtitle">Predictive Application Profile Maintenance</p>
+      </div>
+    </div>
+
+    <section id="project-dynapm" class="project-detail section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-8">
+
+            <div class="project-hero-visual project-visual-dynapm" data-aos="zoom-in" data-aos-delay="100">
+              <div class="project-hero-inner">
+                <i class="bi bi-graph-up" aria-hidden="true"></i>
+                <div class="project-hero-labels">
+                  <span>Machine Learning / Research Engineering</span>
+                  <strong>DynAPM</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-detail-content" data-aos="fade-up" data-aos-delay="150">
+              <div class="project-overview">
+                <h2>Overview</h2>
+                <p>DynAPM is a predictive application-profile maintenance approach designed to keep resource profiles aligned with changing workload behaviour. It combines workload forecasting, time-series analysis, residual-based monitoring, and online drift detection to identify when application resource profiles should be updated.</p>
+                <p>The approach was evaluated using workload traces from 1,576 production virtual machines, with the goal of improving how well application profiles reflect actual resource demand and reducing SLA-related risk. The evaluation used production VM traces; this page does not claim live commercial deployment of DynAPM itself.</p>
+              </div>
+
+              <div class="project-section-block">
+                <h2>The Problem</h2>
+                <p>Static application resource profiles can become inaccurate as workload behaviour changes over time. Poorly maintained profiles can lead to over-provisioning, under-provisioning, inefficient resource allocation, and a higher risk of SLA violations.</p>
+                <p>DynAPM investigates whether forecasting and drift detection can help identify when application profiles should be updated so that profile classes remain better aligned with observed demand.</p>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Approach</h2>
+                <p>At a high level, the work involved preparing workload telemetry, building forecasting pipelines, generating predictions, analysing prediction residuals, detecting workload changes, updating and evaluating application-profile classes, and comparing the approach against a matched baseline.</p>
+                <ul class="project-list">
+                  <li>Time-series forecasting for workload behaviour</li>
+                  <li>Residual-based monitoring and online drift detection</li>
+                  <li>Application resource profiling and profile-class evaluation</li>
+                  <li>Reproducible ML experimentation and baseline comparison</li>
+                </ul>
+              </div>
+
+              <div class="project-section-block">
+                <h2>My Contribution</h2>
+                <p>I developed and evaluated key parts of the research and engineering pipeline for DynAPM, focusing on turning the experimental design into a reproducible software workflow.</p>
+                <ul class="project-list">
+                  <li>Data preparation and experimental pipeline development</li>
+                  <li>Feature processing and forecasting/model integration</li>
+                  <li>Drift-detection workflow implementation</li>
+                  <li>Experiment automation and model evaluation</li>
+                  <li>Statistical and result analysis</li>
+                  <li>Implementation and reproducibility of the research pipeline</li>
+                </ul>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Outcomes</h2>
+                <p>Verified evaluation results from the DynAPM study:</p>
+                <div class="project-outcomes">
+                  <div class="outcome-card">
+                    <span class="outcome-value">+13.0</span>
+                    <span class="outcome-unit">percentage points</span>
+                    <span class="outcome-label">CPU profile-class accuracy</span>
+                  </div>
+                  <div class="outcome-card">
+                    <span class="outcome-value">+14.5</span>
+                    <span class="outcome-unit">percentage points</span>
+                    <span class="outcome-label">Memory profile-class accuracy</span>
+                  </div>
+                  <div class="outcome-card">
+                    <span class="outcome-value">28%</span>
+                    <span class="outcome-unit">reduction</span>
+                    <span class="outcome-label">SLA-risk events</span>
+                  </div>
+                  <div class="outcome-card">
+                    <span class="outcome-value">1,576</span>
+                    <span class="outcome-unit">production VMs</span>
+                    <span class="outcome-label">Traces used for evaluation</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Technical Areas</h2>
+                <div class="project-tech-tags">
+                  <span>Python</span>
+                  <span>NumPy</span>
+                  <span>Pandas</span>
+                  <span>scikit-learn</span>
+                  <span>TensorFlow</span>
+                  <span>Machine Learning</span>
+                  <span>Time-Series Forecasting</span>
+                  <span>Drift Detection</span>
+                  <span>Data Processing</span>
+                  <span>Experiment Automation</span>
+                  <span>Statistical Evaluation</span>
+                </div>
+              </div>
+
+              <div class="project-back-row">
+                <a class="back-to-projects" href="index.html#portfolio"><i class="bi bi-arrow-left"></i> Back to Projects</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+            <aside class="project-sidebar" data-aos="fade-up" data-aos-delay="200">
+              <div class="project-info-card">
+                <h3>Project Details</h3>
+                <div class="info-row">
+                  <span class="label">Project</span>
+                  <span class="value">DynAPM</span>
+                </div>
+                <div class="info-row">
+                  <span class="label">Focus</span>
+                  <span class="value">Predictive Application Profile Maintenance</span>
+                </div>
+                <div class="info-row">
+                  <span class="label">Type</span>
+                  <span class="value">Machine Learning / Research Engineering</span>
+                </div>
+                <div class="info-row">
+                  <span class="label">Timeline</span>
+                  <span class="value">2025 — 2026</span>
+                </div>
+                <div class="info-row">
+                  <span class="label">Evaluation</span>
+                  <span class="value">Traces from 1,576 production VMs</span>
+                </div>
+                <a class="btn-repo" href="https://github.com/KADOUMAAbdelhak/gwa-t-13-lstm-pipeline" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> View Repository
+                </a>
+              </div>
+
+              <div class="project-info-card project-repo-note">
+                <h3>Source Code</h3>
+                <p>The public research pipeline and experiment code are available on GitHub.</p>
+                <a href="https://github.com/KADOUMAAbdelhak/gwa-t-13-lstm-pipeline" target="_blank" rel="noopener noreferrer">
+                  github.com/KADOUMAAbdelhak/gwa-t-13-lstm-pipeline
+                </a>
+              </div>
+            </aside>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Abdelhak Kadouma</span>
+          </a>
+          <p>Software Engineer | AI/ML Engineer | Cloud-Edge Systems</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.linkedin.com/in/kadoumaabdelhak" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/KADOUMAAbdelhak" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#portfolio">Projects</a></li>
+            <li><a href="index.html#publications">Publications</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="project-dynapm.html">DynAPM</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact</h4>
+          <p>Finland</p>
+          <p class="mt-4"><strong>Phone:</strong> <span><a href="tel:+358505725644">+358 505725644</a></span></p>
+          <p><strong>Email:</strong> <span><a href="mailto:kadouma0abdelhak@gmail.com">kadouma0abdelhak@gmail.com</a></span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Abdelhak Kadouma</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
