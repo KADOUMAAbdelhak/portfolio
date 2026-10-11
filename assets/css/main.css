@@ -4502,3 +4502,110 @@ section,
     padding: 22px;
   }
 }
+
+/*--------------------------------------------------------------
+# Portfolio project showcase (icon visuals)
+--------------------------------------------------------------*/
+.portfolio .portfolio-card .project-visual {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.portfolio .portfolio-card .project-visual-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.portfolio .portfolio-card .project-visual-inner i {
+  font-size: 3.25rem;
+  color: color-mix(in srgb, var(--contrast-color), transparent 15%);
+  opacity: 0.9;
+  transition: transform 0.35s ease;
+}
+
+.portfolio .portfolio-card .project-visual .portfolio-overlay {
+  opacity: 1;
+  background: linear-gradient(to bottom, transparent 35%, rgba(0, 0, 0, 0.78) 100%);
+  z-index: 2;
+}
+
+.portfolio .portfolio-card .project-visual .portfolio-overlay .portfolio-info .project-category {
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.portfolio .portfolio-card .project-visual .portfolio-overlay .portfolio-info h4 {
+  font-size: 1.35rem;
+  word-break: break-word;
+}
+
+.portfolio .portfolio-card:hover .project-visual-inner i {
+  transform: scale(1.08);
+}
+
+.portfolio .portfolio-card:hover .project-visual .portfolio-overlay {
+  background: linear-gradient(to bottom, transparent 20%, rgba(0, 0, 0, 0.88) 100%);
+}
+
+.portfolio .portfolio-summary {
+  margin-top: 14px;
+}
+
+.portfolio .portfolio-summary p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: color-mix(in srgb, var(--default-color), transparent 12%);
+}
+
+.portfolio .portfolio-summary .project-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.portfolio .portfolio-card .portfolio-meta {
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.portfolio .portfolio-card .portfolio-meta .project-tags {
+  flex-wrap: wrap;
+  max-width: 75%;
+}
+
+.portfolio .portfolio-card .portfolio-meta .project-year {
+  white-space: nowrap;
+}
+
+.portfolio .project-visual-dynapm {
+  background: linear-gradient(145deg, #1a2332 0%, #2a3f55 55%, #ff4d4f33 100%);
+}
+
+.portfolio .project-visual-9jashares {
+  background: linear-gradient(145deg, #16251c 0%, #1f3d2e 55%, #3dd68c33 100%);
+}
+
+.portfolio .project-visual-school {
+  background: linear-gradient(145deg, #1f1a14 0%, #3a2f22 55%, #d4a37333 100%);
+}
+
+.portfolio .project-visual-timetrack {
+  background: linear-gradient(145deg, #141b2d 0%, #243456 55%, #5b8def33 100%);
+}
+
+.portfolio .project-visual-conference {
+  background: linear-gradient(145deg, #1a2218 0%, #2f4634 55%, #7cbc6a33 100%);
+}
+
+.portfolio .project-visual-osr {
+  background: linear-gradient(145deg, #1a1828 0%, #2f2a4a 55%, #8b7cf633 100%);
+}
