@@ -4681,6 +4681,10 @@ section,
   background: linear-gradient(145deg, #1f1a14 0%, #3a2f22 55%, #d4a37333 100%);
 }
 
+.project-detail .project-visual-conference {
+  background: linear-gradient(145deg, #1a2218 0%, #2f4634 55%, #7cbc6a33 100%);
+}
+
 .project-detail .project-hero-inner {
   position: absolute;
   inset: 0;
