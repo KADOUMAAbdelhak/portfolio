@@ -4669,6 +4669,10 @@ section,
   background: linear-gradient(145deg, #141b2d 0%, #243456 55%, #5b8def33 100%);
 }
 
+.project-detail .project-visual-osr {
+  background: linear-gradient(145deg, #1a1828 0%, #2f2a4a 55%, #8b7cf633 100%);
+}
+
 .project-detail .project-hero-inner {
   position: absolute;
   inset: 0;
@@ -4786,6 +4790,23 @@ section,
   margin-top: 8px;
   font-size: 0.95rem;
   color: color-mix(in srgb, var(--default-color), transparent 18%);
+}
+
+.project-detail .project-context-panel {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 20px 18px;
+}
+
+.project-detail .project-context-panel h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.project-detail .project-context-panel p {
+  margin-bottom: 0;
 }
 
 .project-detail .outcome-card {
