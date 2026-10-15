@@ -4334,6 +4334,17 @@ a:focus-visible,
   outline-offset: 3px;
 }
 
+.hero .hero-typed-line {
+  min-height: 2.6em;
+  max-width: 38rem;
+}
+
+.hero .hero-typed-line .typed,
+.hero .hero-typed-line .typed-cursor {
+  display: inline;
+  white-space: normal;
+}
+
 .hero .hero-tagline {
   margin-top: 18px;
   font-size: 18px;
@@ -4389,7 +4400,7 @@ a:focus-visible,
 .about .profile-card .profile-header .role {
   display: block;
   line-height: 1.45;
-  max-width: 260px;
+  max-width: 320px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -4569,6 +4580,12 @@ a:focus-visible,
 }
 
 @media (max-width: 768px) {
+  .hero .hero-typed-line {
+    min-height: 3.2em;
+    font-size: 18px;
+    max-width: 100%;
+  }
+
   .hero .hero-tagline {
     font-size: 16px;
   }
