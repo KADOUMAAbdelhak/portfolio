@@ -4806,6 +4806,87 @@ a:focus-visible,
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
 }
 
+.project-detail .project-screenshot {
+  margin: 0 0 32px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  background: color-mix(in srgb, var(--default-color), transparent 96%);
+}
+
+.project-detail .project-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.project-detail .project-screenshot figcaption {
+  padding: 10px 14px 12px;
+  font-size: 0.88rem;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  background: var(--surface-color);
+}
+
+.project-detail .project-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 10px;
+  margin: 18px 0 8px;
+}
+
+.project-detail .project-flow-step {
+  flex: 1 1 140px;
+  min-width: 120px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 12px;
+  padding: 14px 12px;
+}
+
+.project-detail .project-flow-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  margin-bottom: 8px;
+}
+
+.project-detail .project-flow-step strong {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  color: var(--heading-color);
+}
+
+.project-detail .project-flow-step p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.project-detail .project-flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  flex: 0 0 auto;
+  align-self: center;
+}
+
 .project-detail .project-visual-dynapm {
   background: linear-gradient(145deg, #1a2332 0%, #2a3f55 55%, #ff4d4f33 100%);
 }
@@ -5102,6 +5183,22 @@ a:focus-visible,
   word-break: break-all;
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .project-detail .project-flow {
+    flex-direction: column;
+  }
+
+  .project-detail .project-flow-step {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .project-detail .project-flow-arrow {
+    transform: rotate(90deg);
+    padding: 2px 0;
+  }
 }
 
 @media (max-width: 768px) {

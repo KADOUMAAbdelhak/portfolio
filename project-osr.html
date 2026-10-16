@@ -4,20 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>OSR | Abdelhak Kadouma</title>
-  <meta name="description" content="Semantic software integration for cloud-edge application lifecycle workflows, developed within the EU-funded AC3 project.">
+  <title>OSR — Ontology Semantic Reasoner | Abdelhak Kadouma</title>
+  <meta name="description" content="OSR (Ontology Semantic Reasoner) — a full-stack AC3 CECCM component connecting semantic application requirements with Kubernetes-oriented cloud-edge deployment workflows.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://abdelhak-kadouma.vercel.app/project-osr.html">
-  <meta property="og:title" content="OSR | Abdelhak Kadouma">
-  <meta property="og:description" content="Semantic software integration for cloud-edge application lifecycle workflows, developed within the EU-funded AC3 project.">
-  <meta property="og:image" content="https://abdelhak-kadouma.vercel.app/assets/img/abdelhak-kadouma.jpg">
+  <meta property="og:title" content="OSR — Ontology Semantic Reasoner | Abdelhak Kadouma">
+  <meta property="og:description" content="OSR (Ontology Semantic Reasoner) — a full-stack AC3 CECCM component connecting semantic application requirements with Kubernetes-oriented cloud-edge deployment workflows.">
+  <meta property="og:image" content="https://abdelhak-kadouma.vercel.app/assets/img/projects/osr-homepage.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OSR | Abdelhak Kadouma">
-  <meta name="twitter:description" content="Semantic software integration for cloud-edge application lifecycle workflows, developed within the EU-funded AC3 project.">
-  <meta name="twitter:image" content="https://abdelhak-kadouma.vercel.app/assets/img/abdelhak-kadouma.jpg">
+  <meta name="twitter:title" content="OSR — Ontology Semantic Reasoner | Abdelhak Kadouma">
+  <meta name="twitter:description" content="OSR (Ontology Semantic Reasoner) — a full-stack AC3 CECCM component connecting semantic application requirements with Kubernetes-oriented cloud-edge deployment workflows.">
+  <meta name="twitter:image" content="https://abdelhak-kadouma.vercel.app/assets/img/projects/osr-homepage.jpg">
   <link rel="canonical" href="https://abdelhak-kadouma.vercel.app/project-osr.html">
 
-  <meta name="keywords" content="OSR, AC3, Semantic Metadata, Cloud-Edge, Interoperability, Application Lifecycle Management">
+  <meta name="keywords" content="OSR, Ontology Semantic Reasoner, AC3, CECCM, Node.js, GraphQL, Kubernetes, Piveau Hub, Cloud-Edge, Full Stack">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.svg" type="image/svg+xml" rel="icon">
@@ -80,8 +80,8 @@
             <li class="current">OSR</li>
           </ol>
         </nav>
-        <h1>OSR</h1>
-        <p class="project-page-subtitle">Semantic Deployment Integration</p>
+        <h1>OSR — Ontology Semantic Reasoner</h1>
+        <p class="project-page-subtitle">Full-stack semantic deployment integration within the AC3 CECCM framework</p>
       </div>
     </div>
 
@@ -93,100 +93,174 @@
 
           <div class="col-lg-8">
 
-            <div class="project-hero-visual project-visual-osr" data-aos="zoom-in" data-aos-delay="100">
-              <div class="project-hero-inner">
-                <i class="bi bi-diagram-3" aria-hidden="true"></i>
-                <div class="project-hero-labels">
-                  <span>Software Engineering / Cloud-Edge Research</span>
-                  <strong>OSR</strong>
-                </div>
-              </div>
-            </div>
+            <figure class="project-screenshot" data-aos="zoom-in" data-aos-delay="100">
+              <img src="assets/img/projects/osr-homepage.jpg" width="1440" height="900" loading="eager" alt="Public OSR application login interface on osr.fingletek.com">
+              <figcaption>Public OSR application interface</figcaption>
+            </figure>
 
             <div class="project-detail-content" data-aos="fade-up" data-aos-delay="150">
               <div class="project-overview">
                 <h2>Overview</h2>
-                <p>OSR is a software integration component developed in the context of the EU-funded AC3 project. It connects structured and semantic application information with cloud-edge application lifecycle and deployment workflows.</p>
-                <p>Its purpose is to improve interoperability between application descriptions, catalogues, and the systems responsible for deploying and managing applications across heterogeneous cloud-edge environments. The work contributed to the successful completion of the AC3 project as part of a collaborative research effort.</p>
+                <p>OSR (Ontology Semantic Reasoner) is a major software component within the AC3 CECCM framework. It connects end-user application requirements, semantic application information, catalogue and data-source information, and cloud-edge deployment workflows.</p>
+                <p>In practical terms, OSR helps transform higher-level requirements into deployment-oriented outputs suitable for Kubernetes-based environments. Semantic information and associated data-source details are part of that translation flow, so operators receive machine-readable deployment definitions instead of having to assemble them manually.</p>
               </div>
 
               <div class="project-section-block">
-                <h2>The Challenge</h2>
-                <p>Cloud-edge ecosystems involve multiple systems, application descriptions, catalogues, deployment mechanisms, and data models. Those components need a consistent way to exchange and interpret application information.</p>
-                <p>Without interoperability, application metadata can become difficult to reuse across catalogue, orchestration, and lifecycle-management systems. OSR addresses this gap by helping connect semantic application information with operational deployment workflows.</p>
+                <h2>The Problem</h2>
+                <p>Cloud-edge deployment workflows need structured application requirements and machine-readable deployment information. End users should not have to manually translate high-level needs into low-level Kubernetes deployment definitions.</p>
+                <p>OSR bridges that gap by processing semantic application information and integrating with other AC3 components—particularly catalogue and data-source services—so requirements can be mapped into deployment-oriented representations. The implementation focuses on producing deployable Kubernetes manifests with associated data-source information, without claiming fully autonomous end-to-end deployment of the wider AC3 platform.</p>
               </div>
 
               <div class="project-section-block">
-                <h2>Approach</h2>
-                <p>At a high level, the work involved integrating structured application metadata with cloud-edge lifecycle processes:</p>
-                <ul class="project-list">
-                  <li>Working with structured application metadata and semantic models</li>
-                  <li>Validating metadata structures for consistent interpretation</li>
-                  <li>Supporting catalogue integration workflows</li>
-                  <li>Translating and mapping semantic information into deployment-oriented application representations</li>
-                  <li>Integrating with cloud-edge application lifecycle workflows</li>
-                </ul>
-                <p class="project-section-note">Supporting standards and technologies in this context include DCAT-AP, Gaia-X concepts, and SHACL-based validation, used where relevant to interoperability rather than as the product headline.</p>
+                <h2>What OSR Does</h2>
+                <p>OSR sits between user-facing requirement capture and deployment-oriented outputs. A simplified view of the flow:</p>
+                <div class="project-flow" aria-label="OSR architecture and data flow">
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">1</span>
+                    <strong>End-user requirements</strong>
+                    <p>Capture application needs through the OSR interface</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">2</span>
+                    <strong>OSR frontend &amp; backend</strong>
+                    <p>Full-stack processing in Node.js services and UI</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">3</span>
+                    <strong>Semantic application information</strong>
+                    <p>Structure and interpret application metadata</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">4</span>
+                    <strong>Piveau Hub / GraphQL</strong>
+                    <p>Catalogue and interoperability integration</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">5</span>
+                    <strong>Profiles &amp; data sources</strong>
+                    <p>Persist profiles and attach data-source information</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">6</span>
+                    <strong>Kubernetes manifests</strong>
+                    <p>Produce deployable cloud-edge deployment definitions</p>
+                  </div>
+                </div>
               </div>
 
               <div class="project-section-block">
                 <h2>My Contribution</h2>
-                <p>I contributed to the software integration work behind OSR within the broader AC3 collaboration, focusing on turning semantic and catalogue information into usable deployment-oriented workflows.</p>
+                <p>I led the frontend and backend development of OSR as one of the main components of the AC3 CECCM framework, while collaborating within the broader AC3 programme rather than owning the entire AC3 platform.</p>
                 <ul class="project-list">
-                  <li>Developed backend and integration software components</li>
-                  <li>Implemented semantic metadata processing</li>
-                  <li>Mapped structured catalogue information into deployment-oriented representations</li>
-                  <li>Contributed to API and integration workflows</li>
-                  <li>Supported validation and interoperability mechanisms</li>
-                  <li>Integrated with application lifecycle-management components</li>
-                  <li>Contributed to testing, technical documentation, and project completion activities</li>
+                  <li>Led frontend and backend development of OSR</li>
+                  <li>Designed and implemented user-facing and server-side functionality</li>
+                  <li>Integrated OSR with Piveau Hub using GraphQL</li>
+                  <li>Implemented profile persistence with MySQL/MariaDB</li>
+                  <li>Worked with SQLite for authentication-related storage</li>
+                  <li>Implemented transformation of end-user requirements into Kubernetes deployment manifests with associated data-source information</li>
+                  <li>Worked across integration, debugging, deployment, and interoperability within the CECCM environment</li>
                 </ul>
               </div>
 
               <div class="project-section-block">
-                <h2>Project Impact</h2>
-                <p>OSR’s impact is best described in qualitative terms rather than invented metrics:</p>
-                <div class="project-principle-grid">
-                  <div class="principle-card">
-                    <h3>AC3 Completion</h3>
-                    <p>Contributed to the successful completion of the EU-funded AC3 project.</p>
-                  </div>
-                  <div class="principle-card">
-                    <h3>Interoperability</h3>
-                    <p>Supported interoperability between semantic/catalogue information and cloud-edge application workflows.</p>
-                  </div>
-                  <div class="principle-card">
-                    <h3>Research to Software</h3>
-                    <p>Helped connect research concepts with usable software integration mechanisms.</p>
-                  </div>
-                  <div class="principle-card">
-                    <h3>Practical Semantics</h3>
-                    <p>Demonstrated practical application of semantic metadata in distributed cloud-edge systems.</p>
-                  </div>
+                <h2>Architecture / Data Flow</h2>
+                <p>OSR combines a user-facing frontend with Node.js backend services. Semantic application information is processed and exchanged with catalogue infrastructure through Piveau Hub via GraphQL. Application profiles are stored in MySQL/MariaDB, while authentication-related storage uses SQLite. The resulting outputs are Kubernetes-oriented deployment manifests that include associated data-source information for cloud-edge deployment workflows.</p>
+                <div class="project-context-panel">
+                  <h3>Requirements → OSR (UI + Node.js) → Semantic metadata → Piveau Hub (GraphQL) → Profiles / data sources → Kubernetes manifests</h3>
+                  <p>Supporting semantic interoperability technologies in this context include DCAT-AP, Gaia-X concepts, and SHACL-based validation where they contribute to consistent catalogue and metadata exchange.</p>
                 </div>
               </div>
 
               <div class="project-section-block">
-                <h2>AC3 Context</h2>
+                <h2>Technical Implementation</h2>
+                <ul class="project-list">
+                  <li><strong>Node.js</strong> for OSR server-side functionality and integration services</li>
+                  <li><strong>Frontend and backend</strong> development for requirement capture, processing, and operator-facing workflows</li>
+                  <li><strong>GraphQL</strong> integration with <strong>Piveau Hub</strong> for catalogue and semantic interoperability</li>
+                  <li><strong>SQLite</strong> for authentication-related storage</li>
+                  <li><strong>MySQL / MariaDB</strong> for profile persistence</li>
+                  <li><strong>Kubernetes</strong> deployment manifests as the primary deployment-oriented output, including associated data-source information</li>
+                  <li>Semantic application information processing, REST/API integration patterns, and cloud-edge interoperability within CECCM</li>
+                  <li>DCAT-AP, Gaia-X concepts, and SHACL used where relevant to metadata consistency and catalogue interoperability</li>
+                </ul>
+              </div>
+
+              <div class="project-section-block">
+                <h2>AC3 / CECCM Context</h2>
                 <div class="project-context-panel">
                   <h3>AC3 — Agile and Cognitive Cloud-edge Continuum</h3>
-                  <p>OSR was developed within this EU-funded collaborative research project and contributed to integrating application information with cloud-edge lifecycle workflows. This page describes the OSR contribution only and does not claim ownership of the complete AC3 platform.</p>
+                  <p>OSR was developed as part of the European AC3 project and formed one of the main components of the CECCM framework. This page describes the OSR software contribution specifically and does not claim ownership of the complete AC3 platform or the entire CECCM framework.</p>
+                  <p class="mb-0"><a href="https://ac3-project.eu/" target="_blank" rel="noopener noreferrer">Visit the AC3 project site <i class="bi bi-box-arrow-up-right"></i></a></p>
                 </div>
               </div>
 
               <div class="project-section-block">
-                <h2>Technical Areas</h2>
+                <h2>Engineering Considerations</h2>
+                <div class="project-principle-grid">
+                  <div class="principle-card">
+                    <h3>Usable Requirements Capture</h3>
+                    <p>End users express application needs without writing low-level Kubernetes definitions by hand.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Semantic Interoperability</h3>
+                    <p>Application information must remain interpretable across catalogue, profile, and deployment components.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Integration Reliability</h3>
+                    <p>GraphQL integration with Piveau Hub and persistence layers must remain stable under collaborative CECCM workflows.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Deployment-Oriented Outputs</h3>
+                    <p>Generated manifests and data-source associations must be actionable for Kubernetes-based cloud-edge environments.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Technologies</h2>
                 <div class="project-tech-tags">
-                  <span>Software Integration</span>
-                  <span>Backend Engineering</span>
-                  <span>REST APIs</span>
+                  <span>Node.js</span>
+                  <span>GraphQL</span>
+                  <span>Piveau Hub</span>
+                  <span>Kubernetes</span>
+                  <span>MySQL/MariaDB</span>
+                  <span>SQLite</span>
+                  <span>Full Stack Development</span>
                   <span>Semantic Metadata</span>
                   <span>Cloud-Edge Computing</span>
-                  <span>Application Lifecycle Management</span>
                   <span>Interoperability</span>
+                  <span>REST APIs</span>
                   <span>DCAT-AP</span>
                   <span>Gaia-X</span>
                   <span>SHACL</span>
+                </div>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Outcome / Impact</h2>
+                <p>Impact is described qualitatively based on the role OSR played in AC3:</p>
+                <div class="project-principle-grid">
+                  <div class="principle-card">
+                    <h3>Semantic-to-Deployment Bridge</h3>
+                    <p>Connected semantic application information with deployment-oriented Kubernetes workflows.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Component Interoperability</h3>
+                    <p>Supported interoperability across AC3/CECCM components through catalogue and GraphQL integration.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Requirements Translation</h3>
+                    <p>Translated higher-level end-user requirements into Kubernetes-oriented deployment outputs with data-source information.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>AC3 Completion</h3>
+                    <p>Contributed to the successful completion of the European AC3 project as a main CECCM software component.</p>
+                  </div>
                 </div>
               </div>
 
@@ -203,15 +277,19 @@
                 <h3>Project Details</h3>
                 <div class="info-row">
                   <span class="label">Project</span>
-                  <span class="value">OSR</span>
+                  <span class="value">OSR — Ontology Semantic Reasoner</span>
                 </div>
                 <div class="info-row">
                   <span class="label">Focus</span>
-                  <span class="value">Semantic Deployment Integration</span>
+                  <span class="value">Full-stack semantic deployment integration</span>
                 </div>
                 <div class="info-row">
-                  <span class="label">Type</span>
-                  <span class="value">Software Engineering / Cloud-Edge Research</span>
+                  <span class="label">Role</span>
+                  <span class="value">Led frontend and backend development</span>
+                </div>
+                <div class="info-row">
+                  <span class="label">Framework</span>
+                  <span class="value">AC3 CECCM</span>
                 </div>
                 <div class="info-row">
                   <span class="label">Programme</span>
@@ -222,7 +300,7 @@
                   <span class="value">2023 — Jun. 2026</span>
                 </div>
                 <a class="btn-repo" href="https://osr.fingletek.com/" target="_blank" rel="noopener noreferrer">
-                  <i class="bi bi-box-arrow-up-right"></i> Visit OSR
+                  <i class="bi bi-box-arrow-up-right"></i> Visit Project
                 </a>
               </div>
 
@@ -231,6 +309,14 @@
                 <p>Explore the public OSR application online.</p>
                 <a href="https://osr.fingletek.com/" target="_blank" rel="noopener noreferrer">
                   osr.fingletek.com
+                </a>
+              </div>
+
+              <div class="project-info-card project-repo-note">
+                <h3>AC3 Project</h3>
+                <p>Learn more about the European AC3 programme.</p>
+                <a href="https://ac3-project.eu/" target="_blank" rel="noopener noreferrer">
+                  ac3-project.eu
                 </a>
               </div>
             </aside>
@@ -252,7 +338,7 @@
           <a href="index.html" class="logo d-flex align-items-center">
             <span class="sitename">Abdelhak Kadouma</span>
           </a>
-          <p>Software Engineer | AI/ML Engineer | Cloud-Edge Systems</p>
+          <p>AI-Driven Software Engineer | Full Stack Developer | AI/ML</p>
           <div class="social-links d-flex mt-4">
             <a href="https://www.linkedin.com/in/kadoumaabdelhak" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
             <a href="https://github.com/KADOUMAAbdelhak" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
@@ -294,6 +380,7 @@
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>
