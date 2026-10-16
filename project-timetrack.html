@@ -4,20 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>TimeTrack | Abdelhak Kadouma</title>
-  <meta name="description" content="A reproducible machine-learning framework for forecasting and evaluating multi-metric cloud telemetry.">
+  <title>TimeTrack — Multi-Metric Forecasting Framework | Abdelhak Kadouma</title>
+  <meta name="description" content="TimeTrack is a reproducible forecasting framework for multi-metric cloud/software telemetry, comparing statistical, ML, and neural models under chronological validation and leakage control.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://abdelhak-kadouma.vercel.app/project-timetrack.html">
-  <meta property="og:title" content="TimeTrack | Abdelhak Kadouma">
-  <meta property="og:description" content="A reproducible machine-learning framework for forecasting and evaluating multi-metric cloud telemetry.">
-  <meta property="og:image" content="https://abdelhak-kadouma.vercel.app/assets/img/abdelhak-kadouma.jpg">
+  <meta property="og:title" content="TimeTrack — Multi-Metric Forecasting Framework | Abdelhak Kadouma">
+  <meta property="og:description" content="TimeTrack is a reproducible forecasting framework for multi-metric cloud/software telemetry, comparing statistical, ML, and neural models under chronological validation and leakage control.">
+  <meta property="og:image" content="https://abdelhak-kadouma.vercel.app/assets/img/projects/timetrack-benchmark-chart.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TimeTrack | Abdelhak Kadouma">
-  <meta name="twitter:description" content="A reproducible machine-learning framework for forecasting and evaluating multi-metric cloud telemetry.">
-  <meta name="twitter:image" content="https://abdelhak-kadouma.vercel.app/assets/img/abdelhak-kadouma.jpg">
+  <meta name="twitter:title" content="TimeTrack — Multi-Metric Forecasting Framework | Abdelhak Kadouma">
+  <meta name="twitter:description" content="TimeTrack is a reproducible forecasting framework for multi-metric cloud/software telemetry, comparing statistical, ML, and neural models under chronological validation and leakage control.">
+  <meta name="twitter:image" content="https://abdelhak-kadouma.vercel.app/assets/img/projects/timetrack-benchmark-chart.jpg">
   <link rel="canonical" href="https://abdelhak-kadouma.vercel.app/project-timetrack.html">
 
-  <meta name="keywords" content="TimeTrack, Time-Series Forecasting, Machine Learning, Cloud Telemetry, Reproducible Research">
+  <meta name="keywords" content="TimeTrack, Time-Series Forecasting, LightGBM, PyTorch, LSTM, PatchTST, DLinear, Reproducible Research">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.svg" type="image/svg+xml" rel="icon">
@@ -80,8 +80,8 @@
             <li class="current">TimeTrack</li>
           </ol>
         </nav>
-        <h1>TimeTrack</h1>
-        <p class="project-page-subtitle">Multi-Metric Forecasting Framework</p>
+        <h1>TimeTrack — Multi-Metric Forecasting Framework</h1>
+        <p class="project-page-subtitle">Reproducible multi-horizon forecasting and benchmarking for cloud/software telemetry</p>
       </div>
     </div>
 
@@ -93,117 +93,243 @@
 
           <div class="col-lg-8">
 
-            <div class="project-hero-visual project-visual-timetrack" data-aos="zoom-in" data-aos-delay="100">
-              <div class="project-hero-inner">
-                <i class="bi bi-clock-history" aria-hidden="true"></i>
-                <div class="project-hero-labels">
-                  <span>Machine Learning / Time-Series Research</span>
-                  <strong>TimeTrack</strong>
-                </div>
-              </div>
-            </div>
+            <figure class="project-screenshot" data-aos="zoom-in" data-aos-delay="100">
+              <img src="assets/img/projects/timetrack-five-model-context-gain.png" width="1600" height="960" loading="eager" alt="Standardized context gain across Ridge, LightGBM, DLinear, LSTM, and PatchTST over eight forecast leads">
+              <figcaption>Standardized F1-vs-F0 context gain across five evaluated forecasting models</figcaption>
+            </figure>
+
+            <figure class="project-screenshot" data-aos="zoom-in" data-aos-delay="150">
+              <img src="assets/img/projects/timetrack-cross-resource-gain.png" width="1200" height="675" loading="lazy" alt="S2 versus S1 primary macro-MAE gain by lead for CPU, throughput, memory, and disk-write targets">
+              <figcaption>Cross-resource input gain (S2 vs S1) by target and forecast lead — gains are not universal</figcaption>
+            </figure>
 
             <div class="project-detail-content" data-aos="fade-up" data-aos-delay="150">
               <div class="project-overview">
                 <h2>Overview</h2>
-                <p>TimeTrack is a reproducible framework for studying and forecasting operational cloud telemetry across multiple resource dimensions. It supports data preparation, time-series forecasting, model training, chronological validation, benchmarking, error analysis, and experiment management for multi-metric operational signals.</p>
-                <p>The goal is to understand how operational resource behaviour can be forecast reliably, and how forecasting methods behave across different telemetry signals and forecasting horizons. The public project focuses on rigorous experimentation rather than claiming live commercial deployment.</p>
+                <p>TimeTrack is a reproducible forecasting framework for studying whether information from multiple runtime signals improves forecasting of cloud/software telemetry—across CPU, memory, disk, and network-related metrics—not CPU alone.</p>
+                <p>Built around OpenAirInterface CI/CD telemetry and later external replication studies, the framework compares forecasting methods across targets, forecast horizons, context lengths, feature configurations, and model families under chronological validation and leakage control. Archived rejected material is separated from the active research artifact.</p>
               </div>
 
               <div class="project-section-block">
                 <h2>The Problem</h2>
-                <p>Cloud and distributed systems continuously produce operational telemetry, but different resource signals can behave very differently over time. Forecasting those signals can support resource planning, predictive management, capacity decisions, anomaly investigation, and application lifecycle management.</p>
-                <p>Meaningful evaluation requires more than simply training a model. Challenges include temporal dependencies, differing signal characteristics, multiple forecast horizons, avoiding data leakage, fair model comparison, reproducibility, and checking whether improvements are consistent rather than accidental.</p>
+                <p>Runtime metrics in distributed software systems are related, but adding more signals does not automatically improve forecasts. A useful framework therefore needs to answer which signals help, for which targets, at which horizons, under which models and context lengths, and whether improvements remain robust under chronological testing.</p>
+                <p>TimeTrack treats that comparison problem as first-class engineering: deterministic protocols, matched supports, purged splits, and structured artifacts—rather than isolated “best model” claims.</p>
               </div>
 
               <div class="project-section-block">
-                <h2>Framework</h2>
-                <p>TimeTrack structures the forecasting workflow as a reusable research and engineering pipeline:</p>
+                <h2>What TimeTrack Is</h2>
+                <p>An experimental systems + AI/ML research codebase for multi-metric telemetry forecasting, including:</p>
                 <ul class="project-list">
-                  <li>Ingest and align operational telemetry</li>
-                  <li>Clean and prepare multi-metric time-series data</li>
-                  <li>Construct model-ready forecasting windows</li>
-                  <li>Train forecasting models across selected signals and horizons</li>
-                  <li>Evaluate predictions with chronological validation</li>
-                  <li>Compare models and feature settings across forecast leads</li>
-                  <li>Analyse errors and robustness</li>
-                  <li>Preserve reproducible experiment outputs and artefacts</li>
+                  <li>Canonical panel construction from multi-file telemetry</li>
+                  <li>Deterministic CPU benchmarking with classical and neural models</li>
+                  <li>Neural-v2 evaluation of DLinear, LSTM, and PatchTST against matched baselines</li>
+                  <li>Multi-resource LSTM factorial experiments (CPU, throughput, memory, disk-write)</li>
+                  <li>Independent external validation on Bitbrains and Materna corpora</li>
+                  <li>Frozen manifests, validators, and regenerable scientific reports</li>
                 </ul>
               </div>
 
               <div class="project-section-block">
-                <h2>Data Scope</h2>
-                <p>The framework studies multi-metric operational telemetry spanning several resource families:</p>
-                <div class="project-signal-tags">
-                  <span><i class="bi bi-cpu" aria-hidden="true"></i> CPU utilisation</span>
-                  <span><i class="bi bi-memory" aria-hidden="true"></i> Memory behaviour</span>
-                  <span><i class="bi bi-device-hdd" aria-hidden="true"></i> Disk metrics</span>
-                  <span><i class="bi bi-diagram-3" aria-hidden="true"></i> Network metrics</span>
+                <h2>Forecasting Scope</h2>
+                <div class="project-principle-grid">
+                  <div class="principle-card">
+                    <h3>Canonical panel</h3>
+                    <p>41,356 aligned timestamps · 113 registered signals · seven machines · CPU / memory / disk / network families</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Forecast leads</h3>
+                    <p><code>[1, 2, 4, 8, 16, 32, 64, 128]</code> future steps (~0.7–90 minutes at the measured sampling interval)</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Context lengths</h3>
+                    <p>Candidate histories <code>L ∈ {32, 64, 128}</code> with contiguous, segment-safe windows</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Active targets</h3>
+                    <p>CPU utilization (primary CPU phase); multi-resource tuple: CPU, log1p throughput, memory used, log1p disk-write</p>
+                  </div>
                 </div>
-                <p class="project-section-note">Signals are handled as multi-metric time series for forecasting and comparison. Sensitive infrastructure identifiers and private dataset locations are not exposed here.</p>
+              </div>
+
+              <div class="project-section-block">
+                <h2>End-to-End Experimental Pipeline</h2>
+                <div class="project-flow" aria-label="TimeTrack experimental pipeline">
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">1</span>
+                    <strong>Raw telemetry</strong>
+                    <p>Multi-file host metrics</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">2</span>
+                    <strong>Alignment</strong>
+                    <p>Exact joins &amp; segments</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">3</span>
+                    <strong>Features</strong>
+                    <p>Frozen feature sets</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">4</span>
+                    <strong>Split / purge</strong>
+                    <p>Chronological folds</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">5</span>
+                    <strong>Train</strong>
+                    <p>Inner selection → refit</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">6</span>
+                    <strong>Forecast</strong>
+                    <p>Persist predictions</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">7</span>
+                    <strong>Metrics</strong>
+                    <p>MAE / RMSE / R²</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">8</span>
+                    <strong>Analysis</strong>
+                    <p>Cross-model / signal</p>
+                  </div>
+                </div>
               </div>
 
               <div class="project-section-block">
                 <h2>My Contribution</h2>
-                <p>I developed and evaluated the forecasting and experimentation pipeline, focusing on turning operational telemetry analysis into a reproducible ML engineering workflow.</p>
+                <p>I designed and implemented the TimeTrack forecasting and benchmarking framework as a software-engineered research system:</p>
                 <ul class="project-list">
-                  <li>Data preparation and preprocessing for multi-metric telemetry</li>
-                  <li>Time-series pipeline implementation and forecasting experiment design</li>
-                  <li>Model training, chronological validation, and evaluation</li>
-                  <li>Benchmarking automation and error analysis</li>
-                  <li>Reproducibility and experiment/result management</li>
-                  <li>Interpretation of model behaviour across telemetry signals and horizons</li>
+                  <li>Designed and implemented the forecasting framework and experiment protocols</li>
+                  <li>Built telemetry alignment, segmentation, and canonical-panel construction</li>
+                  <li>Implemented feature-set construction and matched-support comparison logic</li>
+                  <li>Implemented chronological expanding folds with lead-128 target-time purge</li>
+                  <li>Built model training pipelines for classical and neural forecasters</li>
+                  <li>Orchestrated large-scale deterministic and neural benchmark executions</li>
+                  <li>Persisted predictions, computed metrics, and produced comparative analyses</li>
+                  <li>Froze configurations, manifests, validators, and scientific report artifacts</li>
                 </ul>
               </div>
 
               <div class="project-section-block">
-                <h2>Engineering &amp; Research Principles</h2>
+                <h2>Models &amp; Baselines</h2>
                 <div class="project-principle-grid">
                   <div class="principle-card">
-                    <h3>Reproducibility</h3>
-                    <p>Experiments are structured so configurations, predictions, metrics, and results can be reproduced and compared.</p>
+                    <h3>Baselines / classical ML</h3>
+                    <p>Persistence · Ridge · LightGBM — evaluated in the deterministic Phase 2B-1 benchmark with frozen grids and matched F0 correction.</p>
                   </div>
                   <div class="principle-card">
-                    <h3>Chronological Validation</h3>
-                    <p>Forecasting evaluation respects temporal order rather than using random train/test splitting.</p>
-                  </div>
-                  <div class="principle-card">
-                    <h3>Multi-Metric Evaluation</h3>
-                    <p>Models are evaluated across different resource signals instead of assuming one approach behaves identically everywhere.</p>
-                  </div>
-                  <div class="principle-card">
-                    <h3>Robust Comparison</h3>
-                    <p>Performance is assessed through structured benchmarking and error analysis rather than a single headline metric.</p>
+                    <h3>Neural forecasting</h3>
+                    <p>DLinear · LSTM · PatchTST — evaluated in Neural-v2 scientific runs with multi-seed selection and outer-test isolation.</p>
                   </div>
                 </div>
+                <p class="project-section-note">TCN code exists in the framework, but it is not treated as a completed scientific result set on this page. XGBoost / Random Forest appear only in archived <code>old_fgcs_rejected</code> material and are not listed as active TimeTrack benchmark models.</p>
               </div>
 
               <div class="project-section-block">
-                <h2>Models &amp; Methods</h2>
-                <p>The public repository includes classical and neural forecasting approaches used for baseline comparison and scientific benchmarking:</p>
+                <h2>Temporal Validation &amp; Leakage Control</h2>
                 <ul class="project-list">
-                  <li>Persistence baseline</li>
-                  <li>Ridge regression</li>
-                  <li>LightGBM</li>
-                  <li>DLinear</li>
-                  <li>LSTM</li>
-                  <li>PatchTST-style encoder</li>
+                  <li>Chronological expanding outer folds with non-overlapping test blocks</li>
+                  <li>Inner validation taken from the latest chronological slice of legal training</li>
+                  <li>Target-time purge at maximum lead 128 so training cannot see future test horizons</li>
+                  <li>Exact timestamp alignment; no nearest-neighbour interpolation across gaps</li>
+                  <li>Segment-safe windows that do not cross canonical temporal gaps</li>
+                  <li>Matched sample-ID supports for contextual vs F0 comparisons</li>
+                  <li>Train-only scaling / selection; outer test excluded from configuration choice</li>
                 </ul>
               </div>
 
               <div class="project-section-block">
-                <h2>Evaluation</h2>
-                <p>Evaluation emphasises chronological validation, horizon-aware comparison, and structured error analysis across models and telemetry signals. Core forecasting metrics used in the repository include:</p>
-                <div class="project-signal-tags">
-                  <span>MAE</span>
-                  <span>RMSE</span>
-                  <span>R²</span>
+                <h2>Experiment Scale</h2>
+                <p>Representative Phase 2B-1 deterministic freeze (protocol-conforming CPU benchmark):</p>
+                <div class="project-outcomes">
+                  <div class="outcome-card">
+                    <span class="outcome-value">630</span>
+                    <span class="outcome-unit">completed runs</span>
+                    <span class="outcome-label">Outer deterministic executions</span>
+                  </div>
+                  <div class="outcome-card">
+                    <span class="outcome-value">5,040</span>
+                    <span class="outcome-unit">lead-level metrics</span>
+                    <span class="outcome-label">Stored evaluation rows</span>
+                  </div>
+                  <div class="outcome-card">
+                    <span class="outcome-value">420</span>
+                    <span class="outcome-unit">selected configs</span>
+                    <span class="outcome-label">Deterministic configurations</span>
+                  </div>
+                  <div class="outcome-card">
+                    <span class="outcome-value">630</span>
+                    <span class="outcome-unit">prediction files</span>
+                    <span class="outcome-label">Persisted forecast artifacts</span>
+                  </div>
                 </div>
-                <p class="project-section-note">This page intentionally avoids headline performance claims; the repository remains the source for detailed experiment outputs and comparisons.</p>
+                <div class="project-signal-tags" style="margin-top:1rem;">
+                  <span>8 forecast leads</span>
+                  <span>3 context lengths</span>
+                  <span>41,356 timestamps</span>
+                  <span>113 signals</span>
+                  <span>7 machines</span>
+                </div>
+                <p class="project-section-note">Later neural-v2, multi-resource, and independent-validation phases expand the corpus beyond Phase 2B-1; the cards above are the frozen deterministic scale used as a clear, auditable reference.</p>
               </div>
 
               <div class="project-section-block">
-                <h2>Technical Areas</h2>
+                <h2>Evaluation &amp; Analysis</h2>
+                <p>Core metrics are MAE, RMSE, and R², reported by lead, machine, fold, feature set, and model. Analysis emphasises:</p>
+                <ul class="project-list">
+                  <li>Horizon-aware comparison across the eight genuine future leads</li>
+                  <li>Model-family comparison under shared eligibility and purge rules</li>
+                  <li>Feature-set / context comparisons with matched F0 references</li>
+                  <li>Cross-signal information-sharing studies (throughput context; multi-resource S1/S2/M1)</li>
+                  <li>Robustness and failure-boundary analysis (machines, folds, regimes, external corpora)</li>
+                </ul>
+              </div>
+
+              <div class="project-section-block">
+                <h2>What the Results Taught Us</h2>
+                <ul class="project-list">
+                  <li>Cross-signal information value is <strong>target-, horizon-, and architecture-dependent</strong>—not universally helpful</li>
+                  <li>Same-machine throughput context can help some models modestly (e.g., LSTM overall; LightGBM under cell-relative summaries) while harming others (Ridge, DLinear; often PatchTST)</li>
+                  <li>Absolute forecast quality remains competitive for strong tabular baselines; LSTM context gains do not imply LSTM beats LightGBM absolute MAE</li>
+                  <li>Multi-resource input / shared-representation formulations showed weak or harmful aggregate behaviour on TimeTrack and mixed/negative patterns on Materna replications</li>
+                  <li>Robustness across machines and folds matters more than isolated best-case improvements</li>
+                </ul>
+                <p class="project-section-note">Findings are framed as evaluation evidence under frozen protocols—not universal guarantees.</p>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Engineering &amp; Reproducibility</h2>
+                <div class="project-principle-grid">
+                  <div class="principle-card">
+                    <h3>Frozen protocols</h3>
+                    <p>Phase manifests, SHA-256 inventories, and prospective decision records before result inspection.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Deterministic orchestration</h3>
+                    <p>Drivers, validators, and smoke/preflight gates for deterministic and neural executions.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Persisted artifacts</h3>
+                    <p>Predictions, lead-level metrics, summaries, and regenerable scientific figures/reports.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Archive separation</h3>
+                    <p><code>old_fgcs_rejected/</code> keeps legacy/rejected work out of the active evidence path.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Technologies</h2>
                 <div class="project-tech-tags">
                   <span>Python</span>
                   <span>NumPy</span>
@@ -211,14 +337,25 @@
                   <span>scikit-learn</span>
                   <span>LightGBM</span>
                   <span>PyTorch</span>
+                  <span>DLinear</span>
+                  <span>LSTM</span>
+                  <span>PatchTST</span>
                   <span>Time-Series Forecasting</span>
-                  <span>Machine Learning</span>
-                  <span>Data Processing</span>
                   <span>Experiment Automation</span>
-                  <span>Model Evaluation</span>
-                  <span>Statistical Analysis</span>
+                  <span>Statistical Evaluation</span>
                   <span>Reproducible Research</span>
+                  <span>Data Processing</span>
                 </div>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Visual Evidence</h2>
+                <p>Figures on this page are copied from active repository scientific outputs:</p>
+                <ul class="project-list">
+                  <li><code>benchmark/neural_v2/outputs/patchtst/figures/06_five_model_primary_context_gain.png</code></li>
+                  <li><code>multiresource/04_lstm_factorial/outputs/scientific/figures/01_s2_vs_s1_gain_by_resource_lead.png</code></li>
+                </ul>
+                <p>The homepage card uses the JPEG rendering of the five-model context-gain chart.</p>
               </div>
 
               <div class="project-back-row">
@@ -242,15 +379,15 @@
                 </div>
                 <div class="info-row">
                   <span class="label">Type</span>
-                  <span class="value">Machine Learning / Time-Series Research</span>
+                  <span class="value">AI/ML + Experimental Systems</span>
                 </div>
                 <div class="info-row">
                   <span class="label">Timeline</span>
                   <span class="value">2025 — 2026</span>
                 </div>
                 <div class="info-row">
-                  <span class="label">Signals</span>
-                  <span class="value">CPU, memory, disk, network telemetry</span>
+                  <span class="label">Panel</span>
+                  <span class="value">41,356 × 113 signals</span>
                 </div>
                 <a class="btn-repo" href="https://github.com/KADOUMAAbdelhak/TimeTrack-Forecasting-Framework" target="_blank" rel="noopener noreferrer">
                   <i class="bi bi-github"></i> View Repository
@@ -259,7 +396,7 @@
 
               <div class="project-info-card project-repo-note">
                 <h3>Source Code</h3>
-                <p>The public forecasting framework, benchmarking code, and experiment artefacts are available on GitHub.</p>
+                <p>Active framework, frozen manifests, and scientific artifacts are on GitHub. Legacy rejected work lives under <code>old_fgcs_rejected/</code>.</p>
                 <a href="https://github.com/KADOUMAAbdelhak/TimeTrack-Forecasting-Framework" target="_blank" rel="noopener noreferrer">
                   github.com/KADOUMAAbdelhak/TimeTrack-Forecasting-Framework
                 </a>
@@ -283,7 +420,7 @@
           <a href="index.html" class="logo d-flex align-items-center">
             <span class="sitename">Abdelhak Kadouma</span>
           </a>
-          <p>Software Engineer | AI/ML Engineer | Cloud-Edge Systems</p>
+          <p>AI-Driven Software Engineer | Full Stack Developer | AI/ML</p>
           <div class="social-links d-flex mt-4">
             <a href="https://www.linkedin.com/in/kadoumaabdelhak" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
             <a href="https://github.com/KADOUMAAbdelhak" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
@@ -325,6 +462,7 @@
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>
