@@ -4,20 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>DynAPM | Abdelhak Kadouma</title>
-  <meta name="description" content="DynAPM is a machine-learning project for predictive application profile maintenance using workload forecasting and online drift detection.">
+  <title>DynAPM — Predictive Application Profile Maintenance | Abdelhak Kadouma</title>
+  <meta name="description" content="DynAPM is a research ML system for drift-aware application profile maintenance using predictor-grounded forecasting, residual monitoring, and online drift detection on 1,576 production VM traces.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://abdelhak-kadouma.vercel.app/project-dynapm.html">
-  <meta property="og:title" content="DynAPM | Abdelhak Kadouma">
-  <meta property="og:description" content="DynAPM is a machine-learning project for predictive application profile maintenance using workload forecasting and online drift detection.">
-  <meta property="og:image" content="https://abdelhak-kadouma.vercel.app/assets/img/abdelhak-kadouma.jpg">
+  <meta property="og:title" content="DynAPM — Predictive Application Profile Maintenance | Abdelhak Kadouma">
+  <meta property="og:description" content="DynAPM is a research ML system for drift-aware application profile maintenance using predictor-grounded forecasting, residual monitoring, and online drift detection on 1,576 production VM traces.">
+  <meta property="og:image" content="https://abdelhak-kadouma.vercel.app/assets/img/projects/dynapm-results.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DynAPM | Abdelhak Kadouma">
-  <meta name="twitter:description" content="DynAPM is a machine-learning project for predictive application profile maintenance using workload forecasting and online drift detection.">
-  <meta name="twitter:image" content="https://abdelhak-kadouma.vercel.app/assets/img/abdelhak-kadouma.jpg">
+  <meta name="twitter:title" content="DynAPM — Predictive Application Profile Maintenance | Abdelhak Kadouma">
+  <meta name="twitter:description" content="DynAPM is a research ML system for drift-aware application profile maintenance using predictor-grounded forecasting, residual monitoring, and online drift detection on 1,576 production VM traces.">
+  <meta name="twitter:image" content="https://abdelhak-kadouma.vercel.app/assets/img/projects/dynapm-results.png">
   <link rel="canonical" href="https://abdelhak-kadouma.vercel.app/project-dynapm.html">
 
-  <meta name="keywords" content="DynAPM, Machine Learning, Time-Series Forecasting, Drift Detection, Application Profiling">
+  <meta name="keywords" content="DynAPM, Machine Learning, Drift Detection, Time-Series Forecasting, Application Profiling, scikit-learn, river">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.svg" type="image/svg+xml" rel="icon">
@@ -80,8 +80,8 @@
             <li class="current">DynAPM</li>
           </ol>
         </nav>
-        <h1>DynAPM</h1>
-        <p class="project-page-subtitle">Predictive Application Profile Maintenance</p>
+        <h1>DynAPM — Predictive Application Profile Maintenance</h1>
+        <p class="project-page-subtitle">Drift-aware profile maintenance with predictor-grounded forecasting on production VM traces</p>
       </div>
     </div>
 
@@ -93,56 +93,131 @@
 
           <div class="col-lg-8">
 
-            <div class="project-hero-visual project-visual-dynapm" data-aos="zoom-in" data-aos-delay="100">
-              <div class="project-hero-inner">
-                <i class="bi bi-graph-up" aria-hidden="true"></i>
-                <div class="project-hero-labels">
-                  <span>Machine Learning / Research Engineering</span>
-                  <strong>DynAPM</strong>
-                </div>
-              </div>
-            </div>
+            <figure class="project-screenshot" data-aos="zoom-in" data-aos-delay="100">
+              <img src="assets/img/projects/dynapm-results.png" width="1680" height="800" loading="eager" alt="Bar chart of DynAPM CPU and memory profile-class accuracy by method on 1,576 VMs from paper table data">
+              <figcaption>Corpus-scale profile-class accuracy by method (from DynAPM paper tables)</figcaption>
+            </figure>
 
             <div class="project-detail-content" data-aos="fade-up" data-aos-delay="150">
               <div class="project-overview">
                 <h2>Overview</h2>
-                <p>DynAPM is a predictive application-profile maintenance approach designed to keep resource profiles aligned with changing workload behaviour. It combines workload forecasting, time-series analysis, residual-based monitoring, and online drift detection to identify when application resource profiles should be updated.</p>
-                <p>The approach was evaluated using workload traces from 1,576 production virtual machines, with the goal of improving how well application profiles reflect actual resource demand and reducing SLA-related risk. The evaluation used production VM traces; this page does not claim live commercial deployment of DynAPM itself.</p>
+                <p>DynAPM (Drift-Aware Profile Maintenance with Predictor-Grounded Forecasting) is a research machine-learning system for keeping CPU and memory application resource profiles aligned with changing cloud-edge workload behaviour.</p>
+                <p>Rather than treating forecasting as an end in itself, DynAPM uses per-VM predictors, residual streams, and online drift detection to decide when profile classes and predicted p95 demand should be refreshed. The approach was evaluated on GWA-T-13 Materna production VM traces covering 1,576 virtual machines. This page describes the reproducible research artifact—not a claim of live commercial DynAPM deployment.</p>
               </div>
 
               <div class="project-section-block">
                 <h2>The Problem</h2>
-                <p>Static application resource profiles can become inaccurate as workload behaviour changes over time. Poorly maintained profiles can lead to over-provisioning, under-provisioning, inefficient resource allocation, and a higher risk of SLA violations.</p>
-                <p>DynAPM investigates whether forecasting and drift detection can help identify when application profiles should be updated so that profile classes remain better aligned with observed demand.</p>
+                <p>Static application resource profiles become inaccurate as workload behaviour changes. Updating them too slowly increases SLA risk through under-provisioning; updating them blindly or excessively wastes refresh activity without guaranteeing better profile fidelity.</p>
+                <p>DynAPM asks whether predictor-grounded forecasting combined with drift-aware monitoring can make profile maintenance more responsive to workload change than matched observation-window baselines—while measuring both profile-class accuracy and provisioning-oriented SLA-risk outcomes.</p>
               </div>
 
               <div class="project-section-block">
-                <h2>Approach</h2>
-                <p>At a high level, the work involved preparing workload telemetry, building forecasting pipelines, generating predictions, analysing prediction residuals, detecting workload changes, updating and evaluating application-profile classes, and comparing the approach against a matched baseline.</p>
+                <h2>The Approach</h2>
+                <p>The implemented experimental pipeline follows the DynAPM artifact design:</p>
+                <div class="project-flow" aria-label="DynAPM experimental engineering pipeline">
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">1</span>
+                    <strong>VM telemetry</strong>
+                    <p>Materna CPU/memory traces</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">2</span>
+                    <strong>Data preparation</strong>
+                    <p>Bootstrap windows and features</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">3</span>
+                    <strong>Forecasting</strong>
+                    <p>Per-VM Random Forest predictors</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">4</span>
+                    <strong>Residuals</strong>
+                    <p>Observed − predicted streams</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">5</span>
+                    <strong>Drift detection</strong>
+                    <p>Online ADWIN on residuals</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">6</span>
+                    <strong>Profile refresh</strong>
+                    <p>Class + p95 maintenance</p>
+                  </div>
+                  <div class="project-flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+                  <div class="project-flow-step">
+                    <span class="project-flow-label">7</span>
+                    <strong>Evaluation</strong>
+                    <p>Accuracy and SLA-risk metrics</p>
+                  </div>
+                </div>
+                <p class="project-section-note">This is the verified experimental/engineering pipeline from the DynAPM reproduction package—not a live serving architecture diagram.</p>
+              </div>
+
+              <div class="project-section-block">
+                <h2>End-to-End ML Pipeline</h2>
+                <p>The public <code>dynapm</code> branch packages a full corpus workflow:</p>
                 <ul class="project-list">
-                  <li>Time-series forecasting for workload behaviour</li>
-                  <li>Residual-based monitoring and online drift detection</li>
-                  <li>Application resource profiling and profile-class evaluation</li>
-                  <li>Reproducible ML experimentation and baseline comparison</li>
+                  <li>Bootstrap characterisation and per-VM thresholds</li>
+                  <li>Full-corpus predictor residual generation</li>
+                  <li>Forward-looking ground-truth snapshots (class + p95)</li>
+                  <li>Class-level evaluation across 1,576 VMs and multiple maintenance policies</li>
+                  <li>Provisioning simulation for SLA-risk / under-provisioning outcomes</li>
+                  <li>Paper packaging that regenerates tables and figures from corpus summaries</li>
                 </ul>
               </div>
 
               <div class="project-section-block">
                 <h2>My Contribution</h2>
-                <p>I developed and evaluated key parts of the research and engineering pipeline for DynAPM, focusing on turning the experimental design into a reproducible software workflow.</p>
+                <p>I designed and implemented the DynAPM research and engineering artifact as a reproducible software pipeline:</p>
                 <ul class="project-list">
-                  <li>Data preparation and experimental pipeline development</li>
-                  <li>Feature processing and forecasting/model integration</li>
-                  <li>Drift-detection workflow implementation</li>
-                  <li>Experiment automation and model evaluation</li>
-                  <li>Statistical and result analysis</li>
-                  <li>Implementation and reproducibility of the research pipeline</li>
+                  <li>Designed and implemented the reproducible DynAPM evaluation pipeline</li>
+                  <li>Built data preparation, feature construction, and corpus-scale experiment drivers</li>
+                  <li>Implemented per-VM forecasting and residual-stream generation</li>
+                  <li>Implemented residual-based online drift detection and profile-update policies</li>
+                  <li>Implemented profile-class and provisioning-oriented evaluation</li>
+                  <li>Automated multi-method corpus experiments and metric aggregation</li>
+                  <li>Produced structured results, paper tables/figures, and test coverage for core components</li>
                 </ul>
               </div>
 
               <div class="project-section-block">
-                <h2>Outcomes</h2>
-                <p>Verified evaluation results from the DynAPM study:</p>
+                <h2>Forecasting &amp; Drift Detection</h2>
+                <div class="project-principle-grid">
+                  <div class="principle-card">
+                    <h3>Forecasting</h3>
+                    <p>Per-VM <strong>Random Forest</strong> predictors (scikit-learn) forecast CPU and memory signals from engineered features. Predictions feed residual streams and predictor-lookahead windows used to refresh profile classes and predicted p95 demand.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Drift detection</h3>
+                    <p>Online detectors from <strong>river</strong> (primarily <strong>ADWIN</strong>; Page-Hinkley also implemented) monitor residual streams (<code>y_true − y_pred</code>). Drift events can trigger additional profile refreshes beyond the periodic predictor schedule (DynAPM-V3).</p>
+                  </div>
+                </div>
+                <p class="project-section-note">Drift here means change detection on forecast residual behaviour used to drive profile maintenance—not a generic anomaly dashboard.</p>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Evaluation Methodology</h2>
+                <ul class="project-list">
+                  <li><strong>Dataset:</strong> GWA-T-13 Materna production VM traces</li>
+                  <li><strong>Scale:</strong> 1,576 kept VMs in the full-corpus evaluation</li>
+                  <li><strong>Signals:</strong> CPU and memory profile classes, plus predicted p95 fields</li>
+                  <li><strong>Comparators:</strong> Static, Reactive, Periodic-Window, Periodic-Predictor, DynAPM-V3 (and related variants)</li>
+                  <li><strong>Primary metrics:</strong> mean profile-class accuracy with confidence intervals; pairwise deltas with significance testing</li>
+                  <li><strong>Operational proxy:</strong> under-provisioning / SLA-risk event rates from provisioning evaluation</li>
+                  <li><strong>Reproducibility:</strong> configuration-driven scripts, checked-in corpus summaries, regenerable paper tables/figures, and automated tests</li>
+                </ul>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Results</h2>
+                <p>Verified headline results from the DynAPM study (predictor-grounded maintenance versus the matched observation-window baseline):</p>
                 <div class="project-outcomes">
                   <div class="outcome-card">
                     <span class="outcome-value">+13.0</span>
@@ -155,8 +230,8 @@
                     <span class="outcome-label">Memory profile-class accuracy</span>
                   </div>
                   <div class="outcome-card">
-                    <span class="outcome-value">28%</span>
-                    <span class="outcome-unit">reduction</span>
+                    <span class="outcome-value">−28%</span>
+                    <span class="outcome-unit">relative reduction</span>
                     <span class="outcome-label">SLA-risk events</span>
                   </div>
                   <div class="outcome-card">
@@ -165,23 +240,58 @@
                     <span class="outcome-label">Traces used for evaluation</span>
                   </div>
                 </div>
+                <p class="project-section-note">Values are reported as percentage-point lifts and a relative SLA-risk reduction, matching the manuscript and paper tables. They are not converted into informal “% more accurate” claims.</p>
               </div>
 
               <div class="project-section-block">
-                <h2>Technical Areas</h2>
+                <h2>Engineering &amp; Reproducibility</h2>
+                <div class="project-principle-grid">
+                  <div class="principle-card">
+                    <h3>Modular pipeline</h3>
+                    <p>Separated core modules for predictors, drift, update engine, policies, evaluation runners, and paper packaging.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Experiment automation</h3>
+                    <p>Task scripts drive bootstrap → predictors → ground truth → full-corpus eval → provisioning → paper outputs.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Structured artifacts</h3>
+                    <p>Per-VM JSON results, parquet summaries, residual samples, and regenerable CSV/PNG paper tables and figures.</p>
+                  </div>
+                  <div class="principle-card">
+                    <h3>Tests &amp; repeatability</h3>
+                    <p>Pytest coverage for core components; fixed seeds and documented reproduction commands in the artifact README.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Technologies</h2>
+                <p>Specific libraries listed only where used in the DynAPM artifact:</p>
                 <div class="project-tech-tags">
                   <span>Python</span>
                   <span>NumPy</span>
                   <span>Pandas</span>
                   <span>scikit-learn</span>
-                  <span>TensorFlow</span>
-                  <span>Machine Learning</span>
+                  <span>Random Forest</span>
+                  <span>river</span>
+                  <span>ADWIN</span>
+                  <span>matplotlib</span>
+                  <span>SciPy</span>
+                  <span>PyArrow</span>
+                  <span>joblib</span>
+                  <span>pytest</span>
                   <span>Time-Series Forecasting</span>
                   <span>Drift Detection</span>
-                  <span>Data Processing</span>
                   <span>Experiment Automation</span>
                   <span>Statistical Evaluation</span>
                 </div>
+              </div>
+
+              <div class="project-section-block">
+                <h2>Outcome / What the Results Mean</h2>
+                <p>On the evaluated Materna production VM corpus, DynAPM provides evidence that combining predictor-grounded forecasting with drift-aware profile maintenance can improve CPU and memory profile-class accuracy and reduce SLA-risk events relative to a matched observation-window baseline.</p>
+                <p>These results characterise the research evaluation. They do not claim that DynAPM is a deployed autonomous production control plane, nor that the same lifts are guaranteed on every workload.</p>
               </div>
 
               <div class="project-back-row">
@@ -222,7 +332,7 @@
 
               <div class="project-info-card project-repo-note">
                 <h3>Source Code</h3>
-                <p>The public research pipeline and experiment code are available on GitHub.</p>
+                <p>The DynAPM reproduction package lives in the public repository (see the <code>dynapm</code> branch for the evaluation artifact).</p>
                 <a href="https://github.com/KADOUMAAbdelhak/gwa-t-13-lstm-pipeline" target="_blank" rel="noopener noreferrer">
                   github.com/KADOUMAAbdelhak/gwa-t-13-lstm-pipeline
                 </a>
@@ -246,7 +356,7 @@
           <a href="index.html" class="logo d-flex align-items-center">
             <span class="sitename">Abdelhak Kadouma</span>
           </a>
-          <p>Software Engineer | AI/ML Engineer | Cloud-Edge Systems</p>
+          <p>AI-Driven Software Engineer | Full Stack Developer | AI/ML</p>
           <div class="social-links d-flex mt-4">
             <a href="https://www.linkedin.com/in/kadoumaabdelhak" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
             <a href="https://github.com/KADOUMAAbdelhak" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
@@ -288,6 +398,7 @@
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>
